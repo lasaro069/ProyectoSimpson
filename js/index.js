@@ -10,7 +10,26 @@ const fetchCharacters = (quantity) => {
         })
 }
 
-fetchCharacters(10);
+fetchCharacters(52);
+
+
+
+const search_btn = document.querySelector(".search_btn");
+
+
+const fetchCharacterByName = () => {
+    const search_input = document.querySelector(".search_input");
+    fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?character=${search_input.value}`)
+        .then((response) => response.json())
+        .then(data =>{
+            createCharacterCards(data);
+        })
+}
+
+//creamos el evento de escucha
+search_btn.addEventListener("click", fetchCharacterByName);
+
+
 
 // Creamos una funcion 'createCharacterCard' que recibe la informacion del fetch para pintarlo en el html
 const createCharacterCards = (data) => {
