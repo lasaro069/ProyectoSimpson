@@ -1,0 +1,116 @@
+html, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*SECCION HEADER*/
+
+.header {
+    background-image: url("https://santifx.files.wordpress.com/2017/09/intro-nubes-simpsons-santifx-preview.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 100%;
+}
+
+.search_container {
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px grey;
+
+}
+
+.search_input {
+    padding: 7px 10px;
+    border-radius: 20px;
+    border: 1px solid white;
+    width: 200px;
+    border: 1px solid lightgray;
+    outline: none;
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+.search_btn {
+    background-color: #2185d0;
+    padding: 0.5;
+    width: 100px;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.search_btn:hover {
+    background-color: #2491e4;
+}
+
+
+.search_btn:active {
+    transform: scale(0.95);
+    transition: 200ms;
+}
+
+
+/*   SECCION DEPERSONAJES   */
+
+.character_section {
+    height: calc(100vh - 150px);
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.grid {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*ESTILOS DE LAS CARD*/
+
+
+.character_car {
+    background: white;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 6px;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.img_container {
+    height: 60%;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.character_img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.info_character {
+    background: white;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: justify;
+    padding: 10px;
+}
