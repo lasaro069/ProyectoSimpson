@@ -5,16 +5,23 @@ const fetchCharacters = (quantity) => {
     fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=${quantity}`)
         .then((response) => response.json())
         .then(data => {
-            console.log(data);
+            var characters = [];
+            //validamos si el personaje ya existe para que no se repitan
+            data = data.filter((item) => characters[item.character] ? false : characters[item.character] = true);
             createCharacterCards(data);
+            console.log(data);
         })
 }
 
-fetchCharacters(52);
+fetchCharacters(23);
 
 
 
 const search_btn = document.querySelector(".search_btn");
+
+
+
+
 
 
 const fetchCharacterByName = () => {
@@ -23,8 +30,17 @@ const fetchCharacterByName = () => {
         .then((response) => response.json())
         .then(data =>{
             createCharacterCards(data);
-        })
+            }
+        )
+
+
+
 }
+
+
+
+
+
 
 //creamos el evento de escucha
 search_btn.addEventListener("click", fetchCharacterByName);
